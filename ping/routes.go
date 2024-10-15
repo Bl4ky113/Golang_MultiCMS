@@ -5,14 +5,14 @@ import (
 
     "github.com/gin-gonic/gin"
 
-    shared_types "multi_cms/shared/cms_types"
+    sharedTypes "multi_cms/shared/cms_types"
 )
 
 func ping (cxt *gin.Context) {
     cxt.String(http.StatusOK, "pong")
 }
 
-func AddRootRoutes [Groupable shared_types.RouterGroupable](rtr Groupable) {
+func AddRootRoutes [Groupable sharedTypes.RouterGroupable](rtr Groupable) {
     rootGrp := rtr.Group("/root")
 
     rootGrp.GET("/ping", ping)

@@ -1,0 +1,57 @@
+.header-wrapper {
+    grid-area: header;
+
+    display: flex; /* So main-wraper grid doesn't break everything */
+    flex-flow: nowrap column;
+    align-items: stretch;
+}
+
+.header {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    background-color: #fff;
+
+    box-shadow: 0px 5px 20px -15px #000;
+
+    display: flex;
+    flex: 1 0;
+}
+
+.header .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    flex: 1 0;
+}
+
+.header .blank { flex: 2 0; }
+
+.header .account-wrapper {
+    flex: 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.header .account-wrapper .account--icon {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    border: 0.15rem solid var(--bs-gray-200); 
+    border-radius: 0.5rem;
+
+    background-color: var(--bs-primary);
+
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--bs-white);
+    font: bold 1.75em var(--bs-font-sans-serif);
+}
