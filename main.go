@@ -2,6 +2,7 @@ package main
 
 import (
     pingRoutes "multi_cms/ping"
+    adminRoutes "multi_cms/admin"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,6 +12,10 @@ func setupRouter() *gin.Engine {
 
     // Ping Group
     pingRoutes.AddRootRoutes(rtr)
+
+    // Admin Group
+    adminRoutes.AddAdminTemplates(rtr)
+    adminRoutes.AddAdminRoutes(rtr)
 
 	return rtr
 }

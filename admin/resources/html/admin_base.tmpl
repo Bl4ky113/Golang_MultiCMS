@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="">
+</head>
+<body class="body">
+<div class="main-wrapper">
+    {{ template "admin_header.tmpl" }}
+    {{ template "admin_sidebar.tmpl" }}
+
+    {{ block "admin_main_content" .}}
+    {{ end }}
+
+    {{ template "admin_footer.tmpl" }}
+</div>
+</body>
+</html>
