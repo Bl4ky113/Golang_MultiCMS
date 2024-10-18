@@ -1,3 +1,50 @@
 .sidebar {
+    background-color: var(--bs-primary-dark);
+
+    display: grid;
+    grid-template: minmax(auto, 8vh) 1fr / 1fr;
+    grid-template-areas: 
+        "logo"
+        "nav";
+
     grid-area: sidebar;
+}
+
+.sidebar .logo-wrapper {
+    background-color: var(--bs-primary-light);
+}
+
+.sidebar .sidebar-nav {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+.sidebar .sidebar-nav .sidebar-nav__link {
+    padding: 1.5rem 0.5rem;
+
+    color: var(--bs-white);
+    font: 700 1.15rem/120% var(--bs-font-sans-serif);
+    text-align: center;
+    text-decoration: none;
+
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+
+    transition: 
+        var(--bs-transition-150) background-color, 
+        var(--bs-transition-150) color;
+}
+
+.sidebar .sidebar-nav .sidebar-nav__link:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.sidebar .sidebar-nav .sidebar-nav__link:active {
+    color: rgba(var(--bs-primary-light-rgb), 0.75);
 }

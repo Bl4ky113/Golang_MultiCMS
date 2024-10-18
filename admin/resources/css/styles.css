@@ -5,6 +5,14 @@
  *
  *******/
 
+:root {
+    --bs-primary-light: #b3d1fe; /* -50% Brightness than --bs-primary */
+    --bs-primary-light-rgb: 179, 209, 254;
+    --bs-primary-dark: #011f4c; /* +20% Brightness than --bs-primary */
+    --bs-primary-dark-rgb: 1, 31, 76;
+
+    --bs-transition-150: ease-in-out 150ms;
+}
 
 html, body,
 .main-wrapper {
@@ -21,7 +29,7 @@ html, body,
         /*"sidebar header"*/
         /*"content content"*/
         /*"footer  footer";*/
-    grid-template: minmax(auto, 8vh) 1fr auto / minmax(auto, 20vw) 1fr 1fr;
+    grid-template: minmax(auto, 8vh) 1fr auto / minmax(auto, 10vw) 1fr 1fr;
     grid-template-areas: 
         "sidebar header  header"
         "sidebar content content"
