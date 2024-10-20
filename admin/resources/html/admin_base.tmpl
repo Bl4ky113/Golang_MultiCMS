@@ -27,14 +27,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,700&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-<div class="main-wrapper">
+<div class="body-wrapper">
     {{ template "admin_header.tmpl" }}
     {{ template "admin_sidebar.tmpl" }}
     
-    <main class="main">
-        {{ block "admin_main_content" .}}
-        {{ end }}
-    </main>
+    <div class="content-wrapper">
+        <main class="main">
+            <div class="main-route">
+                <a class="main-route__element" href="#">Home</a>
+                <a class="main-route__element" href="#">test</a>
+                <a class="main-route__element" href="#">tst2</a>
+            </div>
+            {{ block "admin_main_content" .}}
+            {{ end }}
+        </main>
+    </div>
 
     {{ template "admin_footer.tmpl" }}
 </div>
