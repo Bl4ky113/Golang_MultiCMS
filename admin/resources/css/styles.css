@@ -12,6 +12,9 @@
     --bs-primary-dark-rgb: 1, 31, 76;
 
     --bs-transition-150: ease-in-out 150ms;
+
+    --sidebar-max-width: 10vw;
+    --sidebar-max-height: 8vh;
 }
 
 html, body,
@@ -29,13 +32,27 @@ html, body,
         /*"sidebar header"*/
         /*"content content"*/
         /*"footer  footer";*/
-    grid-template: minmax(auto, 8vh) 1fr auto / minmax(auto, 10vw) 1fr 1fr;
+    grid-template: 
+        minmax(auto, var(--sidebar-max-height)) minmax(calc(100vh - var(--sidebar-max-height)), 1fr) auto / 
+        minmax(auto, 10vw) 1fr 1fr;
     grid-template-areas: 
         "sidebar header  header"
         "sidebar content content"
         "footer footer  footer";
     justify-content: stretch;
 }
+
+.multicms-title {
+    margin: 0;
+    padding: 0;
+
+    color: #000;
+    font: 700 2.75rem/100% "Anonymous Pro", var(--bs-font-monospace);
+}
+
+/*.multicms-title::before {
+     TODO: make and add icon 
+}*/
 
 .main {
     grid-area: content;

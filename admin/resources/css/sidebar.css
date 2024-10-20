@@ -2,7 +2,7 @@
     background-color: var(--bs-primary-dark);
 
     display: grid;
-    grid-template: minmax(auto, 8vh) 1fr / 1fr;
+    grid-template: minmax(auto, var(--sidebar-max-height)) 1fr / 1fr;
     grid-template-areas: 
         "logo"
         "nav";
@@ -11,7 +11,7 @@
 }
 
 .sidebar .logo-wrapper {
-    background-color: var(--bs-primary-light);
+    background-color: rgba(var(--bs-primary-rgb), 0.5);
 }
 
 .sidebar .sidebar-nav {
@@ -23,10 +23,10 @@
 }
 
 .sidebar .sidebar-nav .sidebar-nav__link {
-    padding: 1.5rem 0.5rem;
+    padding: 0.5rem;
 
     color: var(--bs-white);
-    font: 700 1.15rem/120% var(--bs-font-sans-serif);
+    font: 700 1rem/120% var(--bs-font-sans-serif);
     text-align: center;
     text-decoration: none;
 
@@ -39,6 +39,10 @@
     transition: 
         var(--bs-transition-150) background-color, 
         var(--bs-transition-150) color;
+}
+
+.sidebar .sidebar-nav .sidebar-nav__link i {
+    font-size: 1.5em;
 }
 
 .sidebar .sidebar-nav .sidebar-nav__link:hover {
