@@ -36,7 +36,7 @@
     gap: 0.5rem;
 }
 
-.header .account-wrapper .account--icon {
+.header .account-wrapper .account__icon {
     --icon-size: 5.25vh;
 
     width: var(--icon-size);
@@ -54,4 +54,20 @@
 
     color: var(--bs-white);
     font: bold 1.75em var(--bs-font-sans-serif);
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        padding: 0.25rem 1rem;
+    }
+
+    .header .header-nav .btn .btn__label,
+    .header .account-wrapper .account__title {
+        display: none;
+    }
+
+    .header .header-nav .btn {
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-padding-y: 0.25rem;
+    }
 }

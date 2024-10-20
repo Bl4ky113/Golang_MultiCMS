@@ -26,11 +26,6 @@ html, body, .body-wrapper {
     background-color: var(--bs-gray-200);
 
     display: grid;
-    /*grid-template: minmax(auto, 8vh) 1fr auto / minmax(auto, 15vw) 1fr;*/
-    /*grid-template-areas: */
-        /*"sidebar header"*/
-        /*"content content"*/
-        /*"footer  footer";*/
     grid-template: 
         minmax(auto, var(--sidebar-max-height)) minmax(calc(100vh - var(--sidebar-max-height)), 1fr) auto / 
         minmax(auto, 10vw) 1fr 1fr;
@@ -85,6 +80,10 @@ html, body, .body-wrapper {
     color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity,1));
 }
 
+.main .main-route .main-route__element:focus-visible {
+    outline-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity,1));
+}
+
 .main .main-route .main-route__element::before {
     content: ">";
 
@@ -98,4 +97,26 @@ html, body, .body-wrapper {
 
     content: "\f015";
     font-family: "FontAwesome";
+}
+
+@media screen and (max-width: 992px) {
+    .body-wrapper {
+        grid-template: 
+            minmax(auto, var(--sidebar-max-height)) minmax(calc(100vh - var(--sidebar-max-height)), 1fr) auto /
+            auto 1fr 1fr;
+        grid-template-areas: 
+            "sidebar header header"
+            "content content content"
+            "footer footer footer";
+    }
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+        --sidebar-max-height: 6vh;
+    }
+
+    .content-wrapper {
+        padding: 0.5rem 0.75rem;
+    }
 }
