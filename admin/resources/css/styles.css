@@ -94,7 +94,8 @@ html, body, .body-wrapper {
 }
 
 .main .main-route .main-route__element:first-of-type::before {
-    content: "";
+    padding: 0 0.25em;
 
-    padding: 0;
+    content: "\f015";
+    font-family: "FontAwesome";
 }

@@ -14,10 +14,35 @@
 }
 
 .footer .footer-route {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 
     grid-row: span 1;
     grid-column: span 3;
+}
+
+.footer .footer-route .footer-route__element {
+    color: var(--bs-body-color);
+    
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+
+.footer .footer-route .footer-route__element:hover {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity,1));
+}
+
+.footer .footer-route .footer-route__element::before {
+    content: ">";
+
+    padding: 0 0.5em;
+
+    color: var(--bs-gray-600);
+    font-size: 1.15em;
+}
+
+.footer .footer-route .footer-route__element:first-of-type::before {
+    content: "\f015";
+    font-family: "FontAwesome";
 }
 
 .footer .section {
