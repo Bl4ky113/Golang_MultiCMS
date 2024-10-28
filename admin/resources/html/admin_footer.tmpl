@@ -1,8 +1,8 @@
 <footer class="footer">
     <section class="footer-route">
-        <a class="footer-route__element" href="#">Home</a>
-        <a class="footer-route__element" href="#">test2</a>
-        <a class="footer-route__element" href="#">test3</a>
+        {{ range $i, $pathStr := .view.pathArray }}
+            <a class="footer-route__element" href="#">{{ $pathStr }}</a>
+        {{ end }}
     </section>
     <section class="section section--info">
         <p class="multicms-title">

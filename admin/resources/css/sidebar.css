@@ -13,6 +13,8 @@
 
 .sidebar .menu-wrapper {
     min-width: var(--sidebar-max-height);
+    
+    padding: 0;
 
     background-color: var(--bs-primary-dark);
 
@@ -76,6 +78,8 @@
 }
 
 .sidebar .sidebar-nav {
+    padding: 0;
+
     box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.25) inset;
 
     display: grid;
@@ -147,13 +151,12 @@
     }
 
     .sidebar .show .sidebar-nav {
-        padding: 0.5rem;
-
         display: grid;
-        gap: 1rem;
     }
 
     .sidebar .show .sidebar-nav .sidebar-nav__link {
+        padding: 0.5rem 0;
+
         font-size: 0.85rem;
     }
 

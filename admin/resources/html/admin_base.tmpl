@@ -28,22 +28,22 @@
 </head>
 <body class="body">
 <div class="body-wrapper">
-    {{ template "admin_header.tmpl" }}
-    {{ template "admin_sidebar.tmpl" }}
+    {{ template "admin_header.tmpl" . }}
+    {{ template "admin_sidebar.tmpl" . }}
     
     <div class="content-wrapper">
         <main class="main">
             <div class="main-route">
-                <a class="main-route__element" href="#">Home</a>
-                <a class="main-route__element" href="#">test</a>
-                <a class="main-route__element" href="#">tst2</a>
+                {{ range $i, $pathStr := .view.pathArray }}
+                    <a class="main-route__element" href="#">{{ $pathStr }}</a>
+                {{ end }}
             </div>
-            {{ block "admin_main_content" .}}
+            {{ block "admin_main_content" . }}
             {{ end }}
         </main>
     </div>
 
-    {{ template "admin_footer.tmpl" }}
+    {{ template "admin_footer.tmpl" . }}
 </div>
 </body>
 </html>

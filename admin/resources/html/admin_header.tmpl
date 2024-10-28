@@ -20,10 +20,14 @@
     <div class="blank"></div>
     <div class="account-wrapper">
         <span class="account__title">
-            Admin
+            {{ .view.usrName }}
+            <span class="account__separator"></span>
+            {{ .view.usrRole }}
         </span>
         <div class="account__icon">
-            <span>A</span>
+            <span>
+                {{ .view.usrIcon }}
+            </span>
         </div>
     </div>
 </header>
