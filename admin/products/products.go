@@ -1,17 +1,17 @@
-package home
+package products
 
 import (
     "net/http"
 
     "github.com/gin-gonic/gin"
 
-     shrd_templates "multi_cms/shared/cms_templates"
+    shrTemplates "multi_cms/shared/cms_templates"
 )
 
-func ViewHome (ctx *gin.Context) {
+func ViewProducts (ctx *gin.Context) {
     viewCtx := make(gin.H)
 
-    err := shrd_templates.GenerateViewContext(ctx, &viewCtx)
+    err := shrTemplates.GenerateViewContext(ctx, &viewCtx)
     if err != nil {
         // TODO: ADD cms_logging error log
     }

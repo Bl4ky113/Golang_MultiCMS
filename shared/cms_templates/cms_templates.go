@@ -1,17 +1,19 @@
 package cms_templates
 
 import (
-    "strings"
+	"strings"
 
-    "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 const (
-    ADMIN_HOME_PATH = "admin"
+    adminHomePath = "admin"
 )
 
 func GenerateViewContext (ctx *gin.Context, viewCtx *gin.H) error {
-    
     // Get View Data
     (*viewCtx)["view"] = gin.H{
         "pathArray": generatePathArray(ctx.FullPath()),
@@ -26,9 +28,10 @@ func GenerateViewContext (ctx *gin.Context, viewCtx *gin.H) error {
 func generatePathArray (pathRawString string) []string {
     pathArray := make([]string, 0, 0)
     pathRawArray := strings.Split(pathRawString, "/")
+    stringCases := cases.Title(language.Und)
 
     for _, str := range pathRawArray {
-        if strings.Compare(str, ADMIN_HOME_PATH) == 0 {
+        if strings.Compare(str, adminHomePath) == 0 {
             pathArray = append(pathArray, "Home")
 
             continue
@@ -36,7 +39,7 @@ func generatePathArray (pathRawString string) []string {
 
         if len(str) <= 0 { continue }
 
-        pathArray = append(pathArray, str)
+        pathArray = append(pathArray, stringCases.String(str))
     }
 
     return pathArray
