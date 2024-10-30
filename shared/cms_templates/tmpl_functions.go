@@ -6,13 +6,13 @@ import (
 
 // Not beeing used right now on the templates, 
 // but might be use full in the future
-func AddTemplateFunctions (tmpl *template.Template) {
+func GetTemplateFunctions () (template.FuncMap) {
     tmplFunctionsMap := template.FuncMap{
         "lststr": tmplLastStr,
         "sub": tmplSubtractValue,
     }
 
-    tmpl.Funcs(tmplFunctionsMap)
+    return tmplFunctionsMap
 }
 
 func tmplLastStr (arr []string) string {

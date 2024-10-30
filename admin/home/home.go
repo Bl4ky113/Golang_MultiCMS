@@ -16,5 +16,5 @@ func ViewHome (ctx *gin.Context) {
         // TODO: ADD cms_logging error log
     }
 
-    ctx.HTML(http.StatusOK, "admin_home", viewCtx)
+    ctx.HTML(http.StatusOK, "admin_home.tmpl", viewCtx)
 }

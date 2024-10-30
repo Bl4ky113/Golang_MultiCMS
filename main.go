@@ -1,9 +1,8 @@
 package main
 
 import (
-	"html/template"
-
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/multitemplate"
 
 	adminRoutes "multi_cms/admin"
 	pingRoutes "multi_cms/ping"
@@ -27,12 +26,15 @@ func setupRouter() *gin.Engine {
 }
 
 func setupTemplates (rtr *gin.Engine) {
-    htmlTemplates := template.New("")
-    shrTemplates.AddTemplateFunctions(htmlTemplates)
+    htmlRender := multitemplate.NewRenderer()
 
-    adminRoutes.AddAdminTemplates(rtr, htmlTemplates)
+    // Template Custom Functions
+    rtr.SetFuncMap(shrTemplates.GetTemplateFunctions())
 
-    rtr.SetHTMLTemplate(htmlTemplates)
+    // Add Apps Routes
+    adminRoutes.AddAdminTemplates(rtr, &htmlRender)
+
+    rtr.HTMLRender = htmlRender
 }
 
 func setupRoutes (rtr *gin.Engine) {

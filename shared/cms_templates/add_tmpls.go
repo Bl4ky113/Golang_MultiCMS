@@ -1,48 +1,34 @@
 package cms_templates
 
 import (
-	"fmt"
-	"html/template"
+    "fmt"
+	"path/filepath"
+
+	"github.com/gin-contrib/multitemplate"
 )
 
 var tmplBaseSufixs = []string{"header", "sidebar", "footer"}
 
-func CreateTemplateFromBase (tmplGroup *template.Template, tmplAddonName, tmplPrefix, addonName string) (*template.Template, error) {
-    tmplBase, err := tmplGroup.Lookup(tmplPrefix + "_base.tmpl").Clone()
-    if tmplBase == nil || err != nil {
-        // TODO: Fatal-Error msg searching and copying for template
-    }
-   
-    tmplAddon := tmplGroup.Lookup(tmplPrefix + "_" + tmplAddonName)
-    if tmplAddon == nil {
-        // TODO: Fatal-Error msg searching for template
-    }
+func LoadTemplatesToRenderer (htmlRenderer *multitemplate.Renderer, tmplsPath, tmplsPrefix string) {
+	layouts, err := filepath.Glob(tmplsPath + tmplsPrefix + "_*.tmpl")
+	if err != nil {
+        // TODO: Better log
+		panic(err.Error())
+	}
 
-    _, err = tmplBase.AddParseTree(tmplPrefix + "_main_content", tmplAddon.Tree)
-    if err != nil {
-        // TODO: Fatal-Error msg
-    }
+	templates, err := filepath.Glob(tmplsPath + "templates/" + tmplsPrefix + "_*.tmpl")
+	if err != nil {
+        // TODO: Better log
+		panic(err.Error())
+	}
 
-    return tmplBase, nil
-}
+	for _, template := range templates {
+		layoutCopy := make([]string, len(layouts))
+		copy(layoutCopy, layouts)
 
-func AddBasesToTemplate (tmpl, tmplGroup *template.Template, tmplPrefix string) (error) {
-    for _, sufix := range tmplBaseSufixs {
-        tmplElement, err := tmplGroup.Lookup(tmplPrefix + "_" + sufix + ".tmpl").Clone()
-        if tmplElement == nil || err != nil {
-            // TODO: Fatal-Error msg
-        }
-        
-        foo, err := tmpl.AddParseTree(
-            tmplPrefix + "_" + sufix,
-            tmplElement.Tree,
-        )
+        fmt.Printf("%v\n", template)
 
-        fmt.Println(foo.Name())
-        for _, bar := range foo.Templates() {
-            fmt.Printf("\t\t-%v\n", bar.Name())
-        }
-    }
-
-    return nil
+		layoutCopy = append(layoutCopy, template)
+		(*htmlRenderer).AddFromFiles(filepath.Base(template), layoutCopy...)
+	}
 }

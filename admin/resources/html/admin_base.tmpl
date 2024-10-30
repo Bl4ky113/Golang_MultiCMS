@@ -28,8 +28,8 @@
 </head>
 <body class="body">
 <div class="body-wrapper">
-    {{ template "admin_header" . }}
-    {{ template "admin_sidebar" . }}
+    {{ template "admin_header.tmpl" . }}
+    {{ template "admin_sidebar.tmpl" . }}
     
     <div class="content-wrapper">
         <main class="main">
@@ -43,7 +43,7 @@
         </main>
     </div>
 
-    {{ template "admin_footer" . }}
+    {{ template "admin_footer.tmpl" . }}
 </div>
 </body>
 </html>
