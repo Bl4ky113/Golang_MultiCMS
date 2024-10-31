@@ -9,14 +9,14 @@ import (
 
 var tmplBaseSufixs = []string{"header", "sidebar", "footer"}
 
-func LoadTemplatesToRenderer (htmlRenderer *multitemplate.Renderer, tmplsPath, tmplsPrefix string) {
+func LoadTemplatesToRenderer (htmlRenderer *multitemplate.Renderer, tmplsPath, tmplsSubPath, tmplsPrefix string) {
 	layouts, err := filepath.Glob(tmplsPath + tmplsPrefix + "_*.tmpl")
 	if err != nil {
         // TODO: Better log
 		panic(err.Error())
 	}
 
-	templates, err := filepath.Glob(tmplsPath + "templates/" + tmplsPrefix + "_*.tmpl")
+	templates, err := filepath.Glob(tmplsPath + tmplsSubPath + tmplsPrefix + "_*.tmpl")
 	if err != nil {
         // TODO: Better log
 		panic(err.Error())

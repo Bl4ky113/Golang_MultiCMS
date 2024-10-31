@@ -13,6 +13,7 @@ import (
 
 const (
     templatesPath = "admin/resources/html/"
+    templatesPrefix = "admin"
     cssPath = "admin/resources/css/"
     jsPath = "admin/resources/js/"
 )
@@ -25,11 +26,8 @@ func AddAdminRoutes [Groupable shrTypes.RouterGroupable](rtr Groupable) {
 }
 
 func AddAdminTemplates (rtr *gin.Engine, htmlRenderer *multitemplate.Renderer) {
-    shrTemplates.LoadTemplatesToRenderer(
-        htmlRenderer,
-        templatesPath,
-        "admin",
-    )
+    shrTemplates.LoadTemplatesToRenderer(htmlRenderer, templatesPath, "home/", templatesPrefix)
+    shrTemplates.LoadTemplatesToRenderer(htmlRenderer, templatesPath, "products/", templatesPrefix)
 
     // Add static files
     rtr.Static("/admin/css/", cssPath)

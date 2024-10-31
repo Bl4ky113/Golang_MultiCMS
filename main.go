@@ -38,10 +38,8 @@ func setupTemplates (rtr *gin.Engine) {
 }
 
 func setupRoutes (rtr *gin.Engine) {
-    // Ping Group
+    // Admin Routes
     pingRoutes.AddRootRoutes(rtr)
-
-    // Admin Group
     adminRoutes.AddAdminRoutes(rtr)
 }
 

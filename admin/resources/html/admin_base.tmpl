@@ -35,6 +35,7 @@
         <main class="main">
             <div class="main-route">
                 {{ range $i, $pathStr := .view.pathArray }}
+                    <span class="main-route__icon"></span>
                     <a class="main-route__element" href="#">{{ $pathStr }}</a>
                 {{ end }}
             </div>
