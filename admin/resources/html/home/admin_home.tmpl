@@ -18,7 +18,87 @@
         Elit ipsam nihil ducimus inventore explicabo. Asperiores expedita asperiores voluptatum sunt enim Officia vero qui exercitationem voluptatum quaerat ex. Incidunt ullam vero eligendi perspiciatis facilis dolorum Est asperiores eligendi ducimus
     </p>
     <form class="form-wrapper">
-        bs-input
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="input-group input-group--small">
+            <span class="input-group-text">@</span>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                <label for="floatingInputGroup1">Username</label>
+            </div>
+        </div>
+        <div class="input-group input-group--big">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                <label for="floatingInputGroup1">Username</label>
+            </div>
+            <span class="input-group-text">HELLO TESTING HALLO</span>
+        </div>
+        <div class="input-group input-group--large">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                <label for="floatingInputGroup1">Lorem ipsum</label>
+            </div>
+            <span class="input-group-text">@</span>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                <label for="floatingInputGroup1">Username</label>
+            </div>
+        </div>
+        <div class="form-floating form-floating--large">
+            <select class="form-select" id="floatingSelectGrid">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <label for="floatingSelectGrid">Works with selects</label>
+        </div>
+        <div class="form-floating">
+            <input value="TESTiing" type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" disabled>
+            <label for="floatingInputDisabled">Email address</label>
+        </div>
+        <div class="empty-space empty-space--small"></div>
+        <div class="form-floating form-floating--small">
+            <select class="form-select" id="floatingSelectGrid">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <label for="floatingSelectGrid">Works with selects</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaDisabled" disabled></textarea>
+            <label for="floatingTextareaDisabled">Comments</label>
+        </div>
+        <div class="form-floating form-floating--large">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" disabled>Disabled textarea with some text inside</textarea>
+            <label for="floatingTextarea2Disabled">Comments</label>
+        </div>
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelectDisabled" aria-label="Floating label disabled select example" disabled>
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <label for="floatingSelectDisabled">Works with selects</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" readonly class="form-control-plaintext" id="floatingEmptyPlaintextInput" placeholder="name@example.com">
+            <label for="floatingEmptyPlaintextInput">Empty input</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="name@example.com" value="Amet dignissimos tempore debitis quos quia. Fugit molestiae velit voluptatibus iure neque magnam expedita nemo Voluptate provident laudantium expedita soluta suscipit doloremque? Quibusdam voluptatum sunt dolores nostrum qui. Suscipit ipsa">
+            <label for="floatingPlaintextInput">Input with value</label>
+        </div>
     </form>
 {{ end }}
 

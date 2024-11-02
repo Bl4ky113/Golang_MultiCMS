@@ -1,0 +1,57 @@
+.form-wrapper {
+    --form-columns: 4;
+
+    padding: 0.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(1fr, var(--form-columns));
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+.form-wrapper > .empty-space,
+.form-wrapper > .input-wrapper,
+.form-wrapper > .input-group,
+.form-wrapper > .form-floating {
+    grid-column: span calc(var(--form-columns) / 2);
+}
+
+.form-wrapper > .empty-space.empty-space--small,
+.form-wrapper > .input-wrapper.input-wrapper--small,
+.form-wrapper > .input-group.input-group--small, 
+.form-wrapper > .form-floating.form-floating--small { 
+    grid-column: span calc(var(--form-columns) / 4); 
+}
+
+.form-wrapper > .empty-space.empty-space--big,
+.form-wrapper > .input-wrapper.input-wrapper--big,
+.form-wrapper > .input-group.input-group--big, 
+.form-wrapper > .form-floating.form-floating--big { 
+    grid-column: span calc( 3 * calc(var(--form-columns) / 4)); 
+}
+
+.form-wrapper > .empty-space.empty-space--large,
+.form-wrapper > .input-wrapper.input-wrapper--large,
+.form-wrapper > .input-group.input-group--large, 
+.form-wrapper > .form-floating.form-floating--large { 
+    grid-column: span var(--form-columns); 
+}
+
+.form-wrapper .form-floating > .form-control:focus~label,
+.form-wrapper .form-floating > .form-select~label {
+    color: rgba(var(--bs-body-color-rgb), 1);
+    transform: scale(.85) translateY(-1rem) translateX(0.15rem);
+}
+
+.form-wrapper .form-floating > .form-control:disabled~label,
+.form-wrapper .form-floating > :disabled~label {
+    color: rgba(var(--bs-body-color-rgb), 0.75);
+    transform: scale(.85) translateY(-1rem) translateX(0.15rem);
+}
+
+.form-wrapper .input-group .input-group-text {
+    padding: 0.75rem;
+
+    font-size: 1.15rem;
+}
+
